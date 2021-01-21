@@ -1,14 +1,32 @@
-/**
- * @format
- */
-
-import 'react-native';
 import React from 'react';
-import App from '../App';
+import '@testing-library/jest-native/extend-expect';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
 
-it('renders correctly', () => {
-  renderer.create(<App />);
+import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import Home from '../src/pages/home';
+
+
+
+
+describe('Contact list', () => {
+    it('Should be able to add a new contact', async () => {
+        const {getByTestId, getByText, getAllByTestId, queryByText} = render(<Home />);
+        fireEvent.press(
+            getByText('NEW CONTACT')
+        );
+        fireEvent.changeText(getByTestId('name'), 'John Doe');
+        fireEvent.changeText(getByTestId('email'), 'johndoe@gmail.com');
+        fireEvent.press(getByText('SAVE'));
+        
+        await waitFor(() => {
+          const list = getByTestId('list');
+          expect(list).toContainElement(getByText('johndoe@gmail.com'))
+        });
+       
+    });
+
+    
+
+
 });
+

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import {Text} from 'react-native';
-import {TextInput} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import {View} from 'react-native';
 import RNSmtpMailer from "react-native-smtp-mailer";
-import {Overlay} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ContactList from '../components/ContactList';
-import {ContainerBorder, ContainerRow, Title1} from './styles';
+import {Title1} from './styles';
 import FormMail from '../components/MailForm';
 import ContactForm from '../components/ContactForm';
 import { getLocalArray, setLocalArray } from '../services/localStorageService';
@@ -128,13 +125,13 @@ export default function Home() {
   return (
     <View style={{flex: 1, alignItems: 'center', backgroundColor: '#191414', paddingTop: 40}}>
       <Sending loading={sending} />
-      <TouchableOpacity onPress={()=> setVisiblectt(true)} style={{flexDirection: 'row', alignItems: 'center'}} >
+      <TouchableOpacity  onPress={()=> setVisiblectt(true)} style={{flexDirection: 'row', alignItems: 'center'}} >
          <Title1>NEW CONTACT</Title1>
          <Icon name="add" color="#FFF" size={23} />
       </TouchableOpacity>
       <ContactForm  visible={visiblectt} setVisible={setVisiblectt} save={save} />
       <FormMail name={name} email={email} body={body} setBody={setBody} visible={visible} setVisible={setVisible} sendEmail={sendEmail} subject={subject} setSubject={setSubject}/>
-     {obj.length > 0 &&  <ContactList deleteContact={question} clk={choice} data={obj} />}
+     {obj.length > 0 &&  <ContactList  deleteContact={question} clk={choice} data={obj} />}
     </View>
   );
 }

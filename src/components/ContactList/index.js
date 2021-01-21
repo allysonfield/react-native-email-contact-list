@@ -14,7 +14,6 @@ export default function ContactList({data, clk, press, Bt, Tp, deleteContact}) {
  
   const renderItem = ({item, index}) => (
     <View
-      
       >
         <ContainerRow>
         <ContainerCol style={{width: 250}}>
@@ -30,7 +29,7 @@ export default function ContactList({data, clk, press, Bt, Tp, deleteContact}) {
         <TouchableOpacity
           onPress={() => deleteContact(index)}
         >
-          <Icon name="delete" size={30} color="red" />
+          <Icon testID="cell-delete" name="delete" size={30} color="red" />
         </TouchableOpacity>
         
       </ContainerCol>
@@ -41,6 +40,7 @@ export default function ContactList({data, clk, press, Bt, Tp, deleteContact}) {
   return (
     <View style={{marginBottom: Bt, marginTop: Tp, width: '100%'}}>
       <FlatList
+      testID="list"
         style={{marginTop: 30, zIndex: 30}}
         contentContainerStyle={styles.list}
         data={data}

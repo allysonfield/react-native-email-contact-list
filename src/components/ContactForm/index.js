@@ -28,6 +28,7 @@ export default function ContactForm({ visible, setVisible, save}){
                 fontWeight: 'bold'}}>Name</Text>
             </ContainerBorder>
             <TextInput
+            testID="name"
             value={name}
             onChangeText={setName}
               style={{
@@ -49,6 +50,7 @@ export default function ContactForm({ visible, setVisible, save}){
                 fontWeight: 'bold'}}>Email</Text>
             </ContainerBorder>
             <TextInput
+            testID="email"
             value={email}
             onChangeText={setEmail}
               style={{
