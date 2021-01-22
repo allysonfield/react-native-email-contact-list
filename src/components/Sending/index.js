@@ -1,8 +1,8 @@
 import React from 'react';
 import LottieView from 'lottie-react-native';
-import {View, Modal} from 'react-native';
+import { View, Modal } from 'react-native';
 
-export default function Sending({loading}) {
+export default function Sending({ loading }) {
   return (
     <Modal visible={loading} transparent animated>
       <View
@@ -16,7 +16,7 @@ export default function Sending({loading}) {
         }}
       />
       <LottieView
-        style={{zIndex: 10}}
+        style={{ zIndex: 10 }}
         source={require('../../assets/LottieFiles/lf30_editor_pqnbto1z.json')}
         autoPlay
         loop

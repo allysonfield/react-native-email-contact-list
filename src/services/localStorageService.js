@@ -27,4 +27,4 @@ function clearLocal(name) {
   AsyncStorage.removeItem(name);
 }
 
-export {setLocal, getLocal, clearLocal, setLocalArray, getLocalArray};
+export { setLocal, getLocal, clearLocal, setLocalArray, getLocalArray };
