@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: ['standard', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -20,12 +20,17 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'react-hooks'],
   rules: {
-    'prettier/prettier': 'error',
     'react/jsx-filename-extension': ['warn', {extensions: ['.jsx', '.js']}],
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
     camelcase: 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     radix: 'off',

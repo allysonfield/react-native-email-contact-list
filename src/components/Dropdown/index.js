@@ -1,14 +1,22 @@
 import React, {useState} from 'react';
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {FlatList, StyleSheet, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Title1, IconGenre1, ContainerRow1} from './styles';
+
+const styles = StyleSheet.create({
+  list: {
+    paddingHorizontal: 20,
+  },
+
+  llistItem: {
+    backgroundColor: '#EEE',
+    marginTop: 20,
+    padding: 30,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+});
 
 export default function Scroll({data, selected, press, Bt, Tp}) {
   const [clicked, setClicked] = useState(false);
@@ -59,18 +67,3 @@ export default function Scroll({data, selected, press, Bt, Tp}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  list: {
-    paddingHorizontal: 20,
-  },
-
-  llistItem: {
-    backgroundColor: '#EEE',
-    marginTop: 20,
-    padding: 30,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-});

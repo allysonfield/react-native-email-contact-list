@@ -17,16 +17,16 @@ export const ContainerCol = styled.View`
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
-  justify-content: space-around
+  justify-content: space-around;
 `;
 
 export const ContainerBorder = styled.View`
   padding: 10px;
-  border: 1px solid #1DB954;
-  background-color: #1DB954;
+  border: 1px solid #1db954;
+  background-color: #1db954;
   border-radius: 2px;
   height: 40px;
-`
+`;
 
 export const ContainerRow = styled.View`
   flex-direction: row;
@@ -34,5 +34,5 @@ export const ContainerRow = styled.View`
   align-items: center;
   margin-bottom: 10px;
   border-radius: 5px;
-  width: 100%
+  width: 100%;
 `;
